@@ -15,16 +15,7 @@ pipeline {
                     RepoURL = "https://github.com/jorgon183/ac1cicd/archive/refs/heads/"    //${RepoURL}
                     }
                 }
-        }
-        stage ('Setup'){
-            steps{
-                //echo "${BRANCH_NAME}"
-                echo "${env.BRANCH_NAME}"
-                //echo "${GIT_BRANCH}"
-                echo "${env.GIT_BRANCH}"
-            }
-        }
-                
+        }                
         stage('CloneRepo') {
             steps {
                 echo "-------------------------------------------------------------------"
