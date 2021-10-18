@@ -4,16 +4,6 @@ pipeline {
         choice(name: "Enviromnment", choices: ["Developer", "Testing", "main"], description: "Environment deploy (Release=main)") 
         string(name: "AppVersion", defaultValue: "1.0.0", description: "App Version Code (X.Y.Z)")
     }
-    triggers {
-         githubPush()
-    }  
-    scm {
-        git {
-            remote {
-                url("https://github.com/jorgon183/ac1cicd.git")
-            }
-        }
-    }       
     stages {
         stage("Init") {
             steps {
