@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'master' }
+    triggers {
+        githubPush()
+    }
     parameters {
         choice(name: "Enviromnment", choices: ["Developer", "Testing", "main"], description: "Environment deploy (Release=main)") 
         string(name: "AppVersion", defaultValue: "1.0.0", description: "App Version Code (X.Y.Z)")
